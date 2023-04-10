@@ -1,7 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
 
-export const InputEnter = ({ onEnter }) => {
+//Custom input with 'OnEnter' property available
+//Prevents it if input.value is empty
+//Can optionally receive placeholder text as property
+export const InputEnter = ({ onEnter, placeholder='' }) => {
 
     const [inputValue, setInputValue] = useState('')
 
@@ -20,7 +23,7 @@ export const InputEnter = ({ onEnter }) => {
         <form onSubmit={submitHandler}>
             <input
                 type='text'
-                placeholder='Buscar gifs'
+                placeholder={placeholder}
                 value={inputValue}
                 onChange={inputChangeHandler} />
         </form>

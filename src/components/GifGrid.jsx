@@ -1,9 +1,10 @@
 import { GifItem } from "./GifItem"
 import { useFetchGifs } from "../hooks/useFetchGifs"
 
-//Would be better if it were divided by columns and not just items,
-//that way each column could fit in 100% width with custom amount 100% width items
+//Receives a search prop to look for GIFs with matching tags,
+//and a limit to specify the amount of GIFs in the grid.
 
+//Returns a grid with the rendered gif items, and loading screen if loading
 export const GifGrid = ({search, limit}) => {
 
   const {gifsData, isLoading} = useFetchGifs(search, limit)
