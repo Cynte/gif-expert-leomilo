@@ -1,10 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
 
-//Custom input with 'OnEnter' property available
-//Prevents it if input.value is empty
+//Custom input with 'OnEnter' property available for function calling
+//Prevents submit if the input value is empty
 //Can optionally receive placeholder text as property
-export const InputEnter = ({ onEnter, placeholder='' }) => {
+export const InputEnter = ({ onEnter, placeholder}) => {
 
     const [inputValue, setInputValue] = useState('')
 

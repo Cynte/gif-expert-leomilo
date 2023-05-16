@@ -3,10 +3,10 @@ export const getGifsData = async(search, limit) => {
     const resp = await fetch(url)
     const {data} = await resp.json()
 
-    const gifsData = data.map(item => ({
-        id:item.id,
-        title: item.title,
-        url: item.images.downsized_large.url
+    const gifsData = data.map(i => ({
+        id:i.id,
+        title: i.title,
+        url: i.images.downsized_large.url
     }))
 
     return gifsData

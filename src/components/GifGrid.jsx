@@ -1,9 +1,10 @@
 import { GifItem } from "./GifItem"
 import { useFetchGifs } from "../hooks/useFetchGifs"
+import PropTypes from "prop-types"
 
-//Receives a search prop to look for GIFs with matching tags,
-//and a limit to specify the amount of GIFs in the grid.
+//TODO: Maybe I should make this component less abstract by deleting the GifItems file
 
+//Receives a search prop to look for GIFs with matching tags, and a limit for the amount of GIFs to render
 //Returns a grid with the rendered gif items, and loading screen if loading
 export const GifGrid = ({search, limit}) => {
 
@@ -22,4 +23,9 @@ export const GifGrid = ({search, limit}) => {
         </div>))}
     </div>
   )
+}
+
+GifGrid.propTypes = {
+  search: PropTypes.string.isRequired,
+  limit: PropTypes.number.isRequired
 }

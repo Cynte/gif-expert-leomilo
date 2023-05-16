@@ -3,7 +3,8 @@ import { render, fireEvent } from '@testing-library/react';
 import { InputEnter } from '../components/InputEnter';
 import '@testing-library/jest-dom/extend-expect';
 
-describe('InputEnter', () => {
+describe('Testing component InputEnter', () => {
+
     it('renders an input with given placeholder text', () => {
       const placeholder = 'Enter text here...';
       const { getByPlaceholderText } = render(<InputEnter onEnter={() => {}} placeholder={placeholder} />);
@@ -16,7 +17,7 @@ describe('InputEnter', () => {
       expect(input.placeholder).toBe('');
     });
   
-    it('calls onEnter function when form is submitted with non-empty input value', () => {
+    it('works properly when form is submitted with non-empty input value', () => {
       const mockOnEnter = jest.fn();
       const inputValue = 'Test input value';
       const { getByRole, getByDisplayValue } = render(<InputEnter onEnter={mockOnEnter} />);

@@ -1,15 +1,31 @@
 import { getGifsData } from '../helpers/getGifsData';
 
-describe('getGifsData', () => {
-  it('fetches gifs data from Giphy API', async () => {
+describe('Testing helper getGifsData', () => {
+
+  it('should fetch gifs data from Giphy API', async () => {
+
     const search = 'cats';
-    const limit = 10;
+    const limit = 1;
     const gifsData = await getGifsData(search, limit);
 
     expect(gifsData).toBeDefined();
     expect(gifsData).toHaveLength(limit);
-    expect(gifsData[0]).toHaveProperty('id');
-    expect(gifsData[0]).toHaveProperty('title');
-    expect(gifsData[0]).toHaveProperty('url');
+    
   });
+
+  it('should generate correct data structure', async () => {
+
+    const search = 'dogs';
+    const limit = 1;
+    const gifsData = await getGifsData(search, limit);
+
+    expect(gifsData[0]).toEqual({
+
+      id: expect.any(String),
+      title: expect.any(String),
+      url: expect.any(String)
+
+    })
+
   });
+});
